@@ -1,0 +1,40 @@
+<h2 class='mb-3'>Edit contact</h2>
+
+<form action='/contacs/edit/123' method='put'>
+	<div class='form-floating mb-3'>
+		<input
+			type='text'
+			class='form-control'
+			id='name'
+			placeholder='Enter your name'
+			required
+			name='name'
+		/>
+		<label for='name'>Name</label>
+	</div>
+	<div class='form-floating mb-3'>
+		<input
+			type='email'
+			class='form-control'
+			id='email'
+			placeholder='name@email.com'
+			required
+			name='email'
+		/>
+		<label for='email'>Email</label>
+	</div>
+	<div class='form-floating mb-3'>
+		<input
+			type='number'
+			class='form-control'
+			id='mobile'
+			placeholder='Enter your name'
+			required
+			name='mobile'
+		/>
+		<label for='mobile'>Mobile Phone</label>
+	</div>
+
+	<a href='/' class='btn btn-secondary'>Back to home</a>
+	<button class='btn btn-success' type='submit'>Submit</button>
+</form>
