@@ -15,13 +15,16 @@ app.set('views', './views')
 
 // middleware
 app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+// false - oddiy formatda data lar qabul qiladi
+// true - nested object
 app.use(express.static(path.join(__dirname, 'public')))
 
 // Routes
 
 app.get('/', (req, res) => {
 	const contacts = getContacts()
-	res.render('home')
+	res.render('home', { title: 'Home Page', contacts })
 })
 app.use('/contacts', require('./routes/contacts.route'))
 app.listen(PORT, () => console.log(`Server is runnning on port: ${PORT}`))
