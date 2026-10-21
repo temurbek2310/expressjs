@@ -18,6 +18,7 @@ router.post('/add', (req, res) => {
 	}
 	contacts.push(newContact)
 	saveContacts(contacts)
+	res.session.message = 'Contact was created sucessfully'
 	res.redirect('/')
 })
 
@@ -40,6 +41,7 @@ router.post('/edit/:id', (req, res) => {
 		return c
 	})
 	saveContacts(updatedContacts)
+	res.session.message = 'Contact was edited sucessfully'
 	res.redirect('/')
 })
 
@@ -48,6 +50,7 @@ router.post('/delete/:id', (req, res) => {
 	const contacts = getContacts()
 	const updatedContacts = contacts.filter(c => c.id !== id)
 	saveContacts(updatedContacts)
+	res.session.message = 'Contact was deleted sucessfully'
 	res.redirect('/')
 })
 
